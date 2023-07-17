@@ -19,7 +19,7 @@ jobs:
 
       # get the release to upload to
       - name: Release
-        uses: gaseum-labs/uhc-versioning@v1.0.0
+        uses: gaseum-labs/uhc-versioning@v1.0.1
         with:
           version_type: major
           upload_file: demo.txt
