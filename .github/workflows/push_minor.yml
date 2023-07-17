@@ -1,0 +1,28 @@
+name: Push Minor
+
+concurrency:
+  group: versioning
+  cancel-in-progress: true
+
+on:
+  push:
+    branches: [minor]
+
+jobs:
+  build:
+    name: Build and Release Minor
+    runs-on: ubuntu-latest
+    steps:
+      # you would probably build something here
+      - name: Do Something
+        run: echo blah blah blah
+
+      # get the release to upload to
+      - name: Release
+        uses: gaseum-labs/uhc-versioning@v1.0.0
+        with:
+          version_type: minor
+          upload_file: demo.txt
+          base_version: v1.0.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
