@@ -21,7 +21,7 @@ jobs:
 
       # get the release to upload to
       - name: Release
-        uses: gaseum-labs/uhc-versioning@v1.0.1
+        uses: gaseum-labs/uhc-versioning@v1.0.0
         with:
           version_type: patch
           upload_file: demo.txt
